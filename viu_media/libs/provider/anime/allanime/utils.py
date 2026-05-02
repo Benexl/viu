@@ -1,8 +1,14 @@
 import functools
+import hashlib
+import json
 import logging
 import os
 import re
+from base64 import b64decode
 from itertools import cycle
+from typing import Any
+
+from Cryptodome.Cipher import AES
 
 logger = logging.getLogger(__name__)
 
@@ -71,6 +77,23 @@ def one_digit_symmetric_xor(password: int, target: str):
             yield segment ^ password
 
     return bytes(genexp()).decode("utf-8")
+
+
+def decode_tobeparsed(payload: str, key_seed: str) -> dict[str, Any]:
+    base64_padding = (-len(payload)) % 4
+    encrypted_payload = b64decode(payload + ("=" * base64_padding))
+    iv = encrypted_payload[1:13]
+    ciphertext = encrypted_payload[13:-16]
+    decryption_key = hashlib.sha256(key_seed.encode("utf-8")).digest()
+
+    plain_text = AES.new(
+        decryption_key,
+        AES.MODE_CTR,
+        nonce=iv,
+        initial_value=2,
+    ).decrypt(ciphertext)
+
+    return json.loads(plain_text.decode("utf-8"))
 
 
 def decode_hex_string(hex_string):

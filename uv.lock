@@ -3816,6 +3816,7 @@ dependencies = [
     { name = "click" },
     { name = "httpx" },
     { name = "inquirerpy" },
+    { name = "pycryptodomex" },
     { name = "pydantic" },
     { name = "rich" },
 ]
@@ -3882,6 +3883,7 @@ requires-dist = [
     { name = "mpv", marker = "extra == 'mpv'", specifier = ">=1.0.7" },
     { name = "plyer", marker = "extra == 'notifications'", specifier = ">=2.1.0" },
     { name = "plyer", marker = "extra == 'standard'", specifier = ">=2.1.0" },
+    { name = "pycryptodomex", specifier = ">=3.23.0" },
     { name = "pycryptodomex", marker = "extra == 'download'", specifier = ">=3.23.0" },
     { name = "pycryptodomex", marker = "extra == 'standard'", specifier = ">=3.23.0" },
     { name = "pydantic", specifier = ">=2.11.7" },

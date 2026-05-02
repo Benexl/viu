@@ -9,6 +9,7 @@ dependencies = [
     "click>=8.1.7",
     "httpx>=0.28.1",
     "inquirerpy>=0.3.4",
+    "pycryptodomex>=3.23.0",
     "pydantic>=2.11.7",
     "rich>=13.9.2",
 ]

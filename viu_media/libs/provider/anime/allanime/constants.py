@@ -19,6 +19,15 @@ API_GRAPHQL_HEADERS= {
     "Content-Type": "application/json",
     "Origin": f"{API_GRAPHQL_REFERER}",
 }
+API_EPISODE_HEADERS = {
+    "Referer": "https://youtu-chan.com",
+    "Origin": "https://youtu-chan.com",
+}
+
+PERSISTED_QUERY_SHA256 = (
+    "d405d0edd690624b66baba3068e0edc3ac90f1597d898a1ec8db4e5c43c00fec"
+)
+TOBEPARSED_DECRYPTION_SEED = "Xot36i3lK3:v1"
 
 # search constants
 DEFAULT_COUNTRY_OF_ORIGIN = "all"
