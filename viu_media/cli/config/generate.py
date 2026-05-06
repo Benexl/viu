@@ -44,9 +44,6 @@ CONFIG_FOOTER = f"""
 # Also join the discord server
 # where the anime tech community lives :)
 # {DISCORD_INVITE}
-# If you like the project and are able to support it please consider buying me a coffee at {SUPPORT_PROJECT_URL}.
-# If you would like to connect with me join the discord server from there you can dm for hackathons, or even to tell me a joke 😂
-# Otherwise enjoy your terminal anime browser experience 😁
 #
 # ==============================================================================
 """.lstrip()
