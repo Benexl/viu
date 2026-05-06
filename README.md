@@ -1,7 +1,3 @@
-<b>
-Keeping up with constantly changing APIs requires more time than I currently have available. Thank you to everyone who used and supported this! The repository will remain archived for reference.
-</b>
-
 <p align="center">
   <h1 align="center">Viu</h1>
 </p>
@@ -47,7 +43,7 @@ Keeping up with constantly changing APIs requires more time than I currently hav
   
   <img width="1895" height="1007" alt="image" src="https://github.com/user-attachments/assets/3b887bcc-a601-4c04-b477-8328f50c227d" />
 
-  *episode menu*
+*episode menu*
 
   <img width="1895" height="1007" alt="image" src="https://github.com/user-attachments/assets/f6284c55-a1a9-4720-83a0-efca0a767c85" />
 
@@ -55,18 +51,18 @@ Keeping up with constantly changing APIs requires more time than I currently hav
 
 > [!IMPORTANT]
 > This project scrapes public-facing websites for its streaming / downloading capabilities and primarily acts as an anilist, jikan and many other media apis tui client. The developer(s) of this application have no affiliation with these content providers. This application hosts zero content and is intended for educational and personal use only. Use at your own risk.
-> 
+>
 > [**Read the Full Disclaimer**](DISCLAIMER.md)
 
 ## Core Features
 
-*   📺 **Interactive TUI:** Browse, search, and manage your AniList library in a rich terminal interface powered by `fzf`, `rofi`, or a built-in selector.
-*   ⚡ **Powerful Search:** Filter the entire AniList database with over 20 different criteria, including genres, tags, year, status, and score.
-*   💾 **Local Registry:** Maintain a fast, local database of your anime for offline access, detailed stats, and robust data management.
-*   ⚙️ **Background Downloader:** Queue episodes for download and let a persistent background worker handle the rest.
-*   📜 **Scriptable CLI:** Automate streaming and downloading with powerful, non-interactive commands perfect for scripting.
-*   🔧 **Highly Customizable:** Tailor every aspect—from UI colors and providers to playback behavior—via a simple, well-documented configuration file.
-*   🔌 **Extensible Architecture:** Easily add new providers, media players, and UI selectors to fit your workflow.
+- 📺 **Interactive TUI:** Browse, search, and manage your AniList library in a rich terminal interface powered by `fzf`, `rofi`, or a built-in selector.
+- ⚡ **Powerful Search:** Filter the entire AniList database with over 20 different criteria, including genres, tags, year, status, and score.
+- 💾 **Local Registry:** Maintain a fast, local database of your anime for offline access, detailed stats, and robust data management.
+- ⚙️ **Background Downloader:** Queue episodes for download and let a persistent background worker handle the rest.
+- 📜 **Scriptable CLI:** Automate streaming and downloading with powerful, non-interactive commands perfect for scripting.
+- 🔧 **Highly Customizable:** Tailor every aspect—from UI colors and providers to playback behavior—via a simple, well-documented configuration file.
+- 🔌 **Extensible Architecture:** Easily add new providers, media players, and UI selectors to fit your workflow.
 
 ## Installation
 
@@ -76,44 +72,52 @@ Viu runs on Windows, macOS, Linux, and Android (via Termux). Pre-built binaries 
 
 For the best experience, please install these external tools:
 
-*   **Required for Streaming:**
-    *   [**mpv**](https://mpv.io/installation/) - The primary and recommended media player.
-*   **Recommended for UI & Previews:**
-    *   [**fzf**](https://github.com/junegunn/fzf) - For the best fuzzy-finder interface.
-    *   [**chafa**](https://github.com/hpjansson/chafa) or [**kitty's icat**](https://sw.kovidgoyal.net/kitty/kittens/icat/) - For image previews in the terminal.
-*   **Recommended for Downloads & Advanced Features:**
-    *   [**ffmpeg**](https://www.ffmpeg.org/) - Required for downloading HLS streams and merging subtitles.
-    *   [**webtorrent-cli**](https://github.com/webtorrent/webtorrent-cli) - For streaming torrents directly.
+- **Required for Streaming:**
+  - [**mpv**](https://mpv.io/installation/) - The primary and recommended media player.
+- **Recommended for UI & Previews:**
+  - [**fzf**](https://github.com/junegunn/fzf) - For the best fuzzy-finder interface.
+  - [**chafa**](https://github.com/hpjansson/chafa) or [**kitty's icat**](https://sw.kovidgoyal.net/kitty/kittens/icat/) - For image previews in the terminal.
+- **Recommended for Downloads & Advanced Features:**
+  - [**ffmpeg**](https://www.ffmpeg.org/) - Required for downloading HLS streams and merging subtitles.
+  - [**webtorrent-cli**](https://github.com/webtorrent/webtorrent-cli) - For streaming torrents directly.
 
 ### Pre-built Binaries (Recommended for Quick Start)
 
 The easiest way to get started is to download a pre-built, self-contained binary from the [**releases page**](https://github.com/viu-media/viu/releases/latest). These binaries include all dependencies and **do not require Python** to be installed.
 
 **Available for:**
-*   **Linux** (x86_64): `viu-linux-x86_64`
-*   **Windows** (x86_64): `viu-windows-x86_64.exe`
-*   **macOS** (Intel x86_64): `viu-macos-x86_64`
-*   **macOS** (Apple Silicon ARM64): `viu-macos-arm64`
+
+- **Linux** (x86_64): `viu-linux-x86_64`
+- **Windows** (x86_64): `viu-windows-x86_64.exe`
+- **macOS** (Intel x86_64): `viu-macos-x86_64`
+- **macOS** (Apple Silicon ARM64): `viu-macos-arm64`
 
 **Installation Steps:**
-1.  Download the appropriate binary for your platform from the [**releases page**](https://github.com/viu-media/viu/releases/latest).
-2.  **Linux/macOS:** Make it executable:
+
+1. Download the appropriate binary for your platform from the [**releases page**](https://github.com/viu-media/viu/releases/latest).
+2. **Linux/macOS:** Make it executable:
+
     ```bash
     # Replace with the actual binary name you downloaded
     chmod +x viu-linux-x86_64
     ```
+
     Then move it to a directory in your PATH:
+
     ```bash
     # Option 1: System-wide installation (requires sudo)
     sudo mv viu-linux-x86_64 /usr/local/bin/viu
-    
+
     # Option 2: User directory installation
     mkdir -p ~/.local/bin
     mv viu-linux-x86_64 ~/.local/bin/viu
     # Make sure ~/.local/bin is in your PATH
     ```
+
     **Windows:** Simply rename `viu-windows-x86_64.exe` to `viu.exe` and place it in a directory in your PATH, or run it directly.
-3.  Verify the installation:
+
+3. Verify the installation:
+
     ```bash
     viu --version
     ```
@@ -138,38 +142,51 @@ uv tool install "viu-media[notifications]" # For desktop notifications
 <details>
   <summary><b>Platform-Specific and Alternative Installers</b></summary>
   
-  #### Nix / NixOS
-  ##### Ephemeral / One-Off Run (No Installation)
+#### Nix / NixOS
+
+##### Ephemeral / One-Off Run (No Installation)
+
   ```bash
   nix run github:viu-media/viu
   ```
-  ##### Imperative Installation
+
+##### Imperative Installation
+
   ```bash
   nix profile install github:viu-media/viu
   ```
-  ##### Declarative Installation
-  ###### in your flake.nix
+
+##### Declarative Installation
+
+###### in your flake.nix
+
   ```nix
   viu.url = "github:viu-media/viu";
   ```
-  ###### in your system or home-manager packages
+
+###### in your system or home-manager packages
+
   ```nix
   inputs.viu.packages.${pkgs.system}.default
   ```
 
-  #### Arch Linux (AUR)
-  Use an AUR helper like `yay` or `paru`.
-  ```bash
-  # Stable version (recommended)
-  yay -S viu-media
+#### Arch Linux (AUR)
 
-  # Git version (latest commit)
-  yay -S viu-media-git
-  ```
-  #### Termux
-  You may have to have rust installed see this issue: https://github.com/pydantic/pydantic-core/issues/1012#issuecomment-2511269688.
-  
-  ```bash
+Use an AUR helper like `yay` or `paru`.
+
+```bash
+# Stable version (recommended)
+yay -S viu-media
+
+# Git version (latest commit)
+yay -S viu-media-git
+```
+
+#### Termux
+
+You may have to have rust installed see this issue: <https://github.com/pydantic/pydantic-core/issues/1012#issuecomment-2511269688>.
+
+```bash
 # Recommended (with pip due to more control)
 pkg install python
 pkg install rust # required cause of pydantic
@@ -237,31 +254,34 @@ pkg install chafa
 # note i recorded it from waydroid which is android for linux sought of like an emulator(bluestacks for example)
 ```
 
+<https://github.com/user-attachments/assets/0c628421-a439-4dea-91bb-7153e8f20ccf>
 
-https://github.com/user-attachments/assets/0c628421-a439-4dea-91bb-7153e8f20ccf
+#### Using pipx (for isolated environments)
 
+```bash
+pipx install "viu-media[standard]"
+```
 
-  #### Using pipx (for isolated environments)
-  ```bash
-  pipx install "viu-media[standard]"
-  ```
-  
-  #### Using pip
-  ```bash
-  pip install "viu-media[standard]"
-  ```
+#### Using pip
+
+```bash
+pip install "viu-media[standard]"
+```
+
 </details>
 
 <details>
   <summary><b>Building from Source</b></summary>
   
   Requires [Git](https://git-scm.com/), [Python 3.10+](https://www.python.org/), and [uv](https://astral.sh/blog/uv).
+
   ```bash
   git clone https://github.com/viu-media/Viu.git --depth 1
   cd Viu
   uv tool install .
   viu --version
   ```
+
 </details>
 
 > [!TIP]
@@ -271,29 +291,33 @@ https://github.com/user-attachments/assets/0c628421-a439-4dea-91bb-7153e8f20ccf
 
 Get up and running in three simple steps:
 
-1.  **Authenticate with AniList:**
+1. **Authenticate with AniList:**
+
     ```bash
     viu anilist auth
     ```
+
     This will open your browser. Authorize the app and paste the obtained token back into the terminal. Alternatively, you can pass the token directly as an argument, or provide a path to a text file containing the token.
 
-2.  **Launch the Interactive TUI:**
+2. **Launch the Interactive TUI:**
+
     ```bash
     viu anilist
     ```
 
-3.  **Browse & Play:** Use your arrow keys to navigate the menus, select an anime, and choose an episode to stream instantly.
+3. **Browse & Play:** Use your arrow keys to navigate the menus, select an anime, and choose an episode to stream instantly.
 
 ## Usage Guide
 
 ### The Interactive TUI (`viu anilist`)
 
 This is the main, user-friendly way to use Viu. It provides a rich terminal experience where you can:
-*   Browse trending, popular, and seasonal anime.
-*   Manage your personal lists (Watching, Completed, Paused, etc.).
-*   Search for any anime in the AniList database.
-*   View detailed information, characters, recommendations, reviews, and airing schedules.
-*   Stream or download episodes directly from the menus.
+
+- Browse trending, popular, and seasonal anime.
+- Manage your personal lists (Watching, Completed, Paused, etc.).
+- Search for any anime in the AniList database.
+- View detailed information, characters, recommendations, reviews, and airing schedules.
+- Stream or download episodes directly from the menus.
 
 ### Powerful Searching (`viu anilist search`)
 
@@ -314,25 +338,30 @@ viu anilist search -t "Demon Slayer" --dump-json
 
 Viu includes a robust background downloading system.
 
-1.  **Add episodes to the queue:**
+1. **Add episodes to the queue:**
+
     ```bash
     # Add episodes 1-12 of Jujutsu Kaisen to the download queue
     viu queue add -t "Jujutsu Kaisen" -r "0:12"
     ```
-2.  **Start the worker process:**
-    ```bash
+
+2. **Start the worker process:**
+
+    ````bash
     # Run the worker in the foreground (press Ctrl+C to stop)
     viu worker
 
     # Or run it as a background process
     viu worker &
     ```The worker will now process the queue, download your episodes, and check for notifications.
+    ````
 
 ### Scriptable Commands (`download` & `search`)
 
 These commands are designed for automation and quick, non-interactive tasks.
 
 #### `download` Examples
+
 ```bash
 # Download the latest 5 episodes of One Piece
 viu download -t "One Piece" -r "-5"
@@ -342,6 +371,7 @@ viu download -t "Jujutsu Kaisen" -r "0:24" --merge --clean
 ```
 
 #### `search` (Binging) Examples
+
 ```bash
 # Start binging an anime from the first episode
 viu search -t "Attack on Titan" -r ":"
@@ -354,20 +384,20 @@ viu search -t "My Hero Academia" -r "-1"
 
 Viu maintains a local database of your anime for offline access and enhanced performance.
 
-*   `registry sync`: Synchronize your local data with your remote AniList account.
-*   `registry stats`: Show detailed statistics about your viewing habits.
-*   `registry backup`: Create a compressed backup of your entire registry.
-*   `registry restore`: Restore your data from a backup file.
-*   `registry export/import`: Export/import your data to JSON/CSV for use in other applications.
-*   `registry clean`: Clean up orphaned or invalid entries from your local database.
+- `registry sync`: Synchronize your local data with your remote AniList account.
+- `registry stats`: Show detailed statistics about your viewing habits.
+- `registry backup`: Create a compressed backup of your entire registry.
+- `registry restore`: Restore your data from a backup file.
+- `registry export/import`: Export/import your data to JSON/CSV for use in other applications.
+- `registry clean`: Clean up orphaned or invalid entries from your local database.
 
 ## Configuration
 
 Viu is highly customizable. A default configuration file with detailed comments is created on the first run.
 
-*   **Find your config file:** `viu config --path`
-*   **Edit in your default editor:** `viu config`
-*   **Use the interactive wizard:** `viu config --interactive`
+- **Find your config file:** `viu config --path`
+- **Edit in your default editor:** `viu config`
+- **Use the interactive wizard:** `viu config --interactive`
 
 Most settings in the config file can be temporarily overridden with command-line flags (e.g., `viu --provider animepahe anilist`).
 
@@ -411,6 +441,7 @@ notification_check_interval = 15 ; How often to check for new episodes (minutes)
 download_check_interval = 5      ; How often to process the download queue (minutes).
 ...
 ```
+
 </details>
 
 ## Advanced Features
@@ -420,21 +451,24 @@ download_check_interval = 5      ; How often to process the download queue (minu
 When `use_ipc = True` is set in your config, Viu provides powerful in-player controls without needing to close MPV.
 
 **Key Bindings:**
-*   `Shift+N`: Play the next episode.
-*   `Shift+P`: Play the previous episode.
-*   `Shift+R`: Reload the current episode.
-*   `Shift+A`: Toggle auto-play for the next episode.
-*   `Shift+T`: Toggle between `dub` and `sub`.
+
+- `Shift+N`: Play the next episode.
+- `Shift+P`: Play the previous episode.
+- `Shift+R`: Reload the current episode.
+- `Shift+A`: Toggle auto-play for the next episode.
+- `Shift+T`: Toggle between `dub` and `sub`.
 
 **Script Messages (For MPV Console):**
-*   `script-message select-episode <number>`: Jump to a specific episode.
-*   `script-message select-server <name>`: Switch to a different streaming server.
+
+- `script-message select-episode <number>`: Jump to a specific episode.
+- `script-message select-server <name>`: Switch to a different streaming server.
 
 ### Running as a Service (Linux/systemd)
 
 You can run the background worker as a systemd service for persistence.
 
-1.  Create a service file at `~/.config/systemd/user/viu-worker.service`:
+1. Create a service file at `~/.config/systemd/user/viu-worker.service`:
+
     ```ini
     [Unit]
     Description=Viu Background Worker
@@ -449,15 +483,18 @@ You can run the background worker as a systemd service for persistence.
     [Install]
     WantedBy=default.target
     ```
+
     *Replace `/path/to/your/viu` with the output of `which viu`.*
 
-2.  Enable and start the service:
+2. Enable and start the service:
+
     ```bash
     systemctl --user daemon-reload
     systemctl --user enable --now viu-worker.service
     ```
-    
+
 ## Project using it
+
 **[Inazuma](https://github.com/viu-media/Inazuma)** - official gui wrapper over viu built in kivymd
 
 ## Contributing
