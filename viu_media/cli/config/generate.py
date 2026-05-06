@@ -15,7 +15,6 @@ from ...core.constants import (
     CLI_NAME,
     DISCORD_INVITE,
     REPO_HOME,
-    SUPPORT_PROJECT_URL,
 )
 
 # The header for the config file.
